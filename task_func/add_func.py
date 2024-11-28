@@ -1,35 +1,26 @@
 import json
+from task_func.logic_file import load_json
 from time import asctime
-from os import path
 
 
 def add_func():
+    file_name = 'data/test.json'
     date_now = asctime()
     last_upd = asctime()
+    test = load_json(file_name)
 
-    file_name = 'data/test.json'
-
-    if path.exists(file_name):
-        with open(file_name, 'r') as file:
-            try:
-                test = json.load(file)
-            except json.JSONDecodeError:
-                test = []
-    else:
-        test = []
-
-    max_id = max((test['id'] for test in test))
     description = input('add new task: ')
+    max_id = max((test['id'] for test in test), default=0)
 
-    new_task = {
+    new_tasks = {
         'id': max_id + 1,
         'description': f'{description}',
         'status': 'todo',
         'createdAt': f'{date_now}',
         'updatedAt': f'{last_upd}',
-        }
+    }
 
-    test.append(new_task)
+    test.append(new_tasks)
 
     with open(file_name, 'w') as file:
         json.dump(test, file, indent=4)

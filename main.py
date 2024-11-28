@@ -1,4 +1,5 @@
 from task_func.add_func import add_func
+from task_func.delete_func import delete_func
 
 """
     Вимоги:
@@ -22,10 +23,26 @@ from task_func.add_func import add_func
     updatedAt: Дата та час останнього оновлення завдання
 """
 
+
 if __name__ == '__main__':
     inp = input('choose action: ')
     while inp != 'exit':
-        if inp == 'add':
+        if inp == 'add' or inp == 'a':
             add_func()
             break
-
+        elif inp == 'delete' or inp == 'd':
+            delete_func()
+            break
+        elif inp == 'update' or inp == 'u':
+            pass
+        elif inp == 'task list' or inp == 'tl':
+            pass
+        elif inp == 'task done' or inp == 'td':
+            pass
+        elif inp == 'task not done' or inp == 'tnd':
+            pass
+        elif inp == 'task progress' or inp == 'tp':
+            pass
+        else:
+            print('invalid input')
+            break

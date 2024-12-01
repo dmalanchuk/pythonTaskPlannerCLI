@@ -7,10 +7,10 @@
         "updatedAt": "Fri Nov 29 00:04:45 2024"
     },
     {
-        "id": 2,
-        "description": "3",
+        "id": 3,
+        "description": "new task",
         "status": "todo",
-        "createdAt": "Fri Nov 29 00:05:51 2024",
-        "updatedAt": "Fri Nov 29 00:05:51 2024"
+        "createdAt": "Sun Dec  1 15:34:43 2024",
+        "updatedAt": "Sun Dec  1 15:34:43 2024"
     }
 ]

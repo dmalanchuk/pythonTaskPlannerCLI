@@ -1,13 +1,12 @@
 import json
-from task_func.logic_file import load_json
 from time import asctime
+from task_func.logic_file import load_json
 
 
 def add_func():
-    file_name = 'data/test.json'
     date_now = asctime()
     last_upd = asctime()
-    test = load_json(file_name)
+    test = load_json('data/test.json')
 
     description = input('add new task: ')
     max_id = max((test['id'] for test in test), default=0)
@@ -22,7 +21,7 @@ def add_func():
 
     test.append(new_tasks)
 
-    with open(file_name, 'w') as file:
+    with open('data/test.json', 'w') as file:
         json.dump(test, file, indent=4)
 
 

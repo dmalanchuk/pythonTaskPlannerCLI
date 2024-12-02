@@ -1,6 +1,6 @@
 import json
 from time import asctime
-from task_func.logic_file import load_json
+from logic.logic_file import load_json
 
 
 def add_func():

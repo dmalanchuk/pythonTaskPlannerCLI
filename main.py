@@ -1,5 +1,6 @@
 from task_func.add_func import add_func
 from task_func.delete_func import delete_func
+from task_func.update_func import update_func
 
 """
     Вимоги:
@@ -34,7 +35,8 @@ if __name__ == '__main__':
             delete_func()
             break
         elif inp == 'update' or inp == 'u':
-            pass
+            update_func()
+            break
         elif inp == 'task list' or inp == 'tl':
             pass
         elif inp == 'task done' or inp == 'td':

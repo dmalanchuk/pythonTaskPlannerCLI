@@ -1,5 +1,7 @@
 import json
-from task_func.logic_file import load_json
+
+from logic.logic_enter import logic_enter
+from logic.logic_file import load_json
 
 
 def delete_func():
@@ -7,10 +9,7 @@ def delete_func():
     found = False  # flag
 
     del_i = input('Enter the ID to be deleted: ')
-    try:
-        del_i = int(del_i)
-    except ValueError:
-        print('Please enter an integer')
+    logic_enter(del_i)
 
     for i in test:
         if i['id'] == del_i:

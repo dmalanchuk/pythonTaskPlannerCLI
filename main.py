@@ -1,5 +1,6 @@
 from task_func.add_func import add_func
 from task_func.delete_func import delete_func
+from task_func.todo_lists import task_func
 from task_func.update_func import update_func
 
 """
@@ -38,7 +39,8 @@ if __name__ == '__main__':
             update_func()
             break
         elif inp == 'task list' or inp == 'tl':
-            pass
+            task_func()
+            break
         elif inp == 'task done' or inp == 'td':
             pass
         elif inp == 'task not done' or inp == 'tnd':
@@ -48,3 +50,4 @@ if __name__ == '__main__':
         else:
             print('invalid input')
             break
+

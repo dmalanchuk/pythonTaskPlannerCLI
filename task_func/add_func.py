@@ -1,15 +1,17 @@
 import json
-from time import asctime
+from datetime import datetime
+
+from logic.finding_max_id import find_max_id
 from logic.logic_file import load_json
 
 
 def add_func():
-    date_now = asctime()
-    last_upd = asctime()
+    date_now = datetime.now().strftime('%c')
+    last_upd = datetime.now().strftime('%c')
     test = load_json('data/test.json')
 
     description = input('add new task: ')
-    max_id = max((test['id'] for test in test), default=0)
+    max_id = find_max_id(test)
 
     new_tasks = {
         'id': max_id + 1,
